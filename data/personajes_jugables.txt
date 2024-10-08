@@ -1,0 +1,3 @@
+Aragorn,Guerrero,5,250,Espada larga:Arma:100,Poción de salud:Consumible:50
+Gandalf,Mago,10,750,Bastón mágico:Arma:200,Grimorio:Libro:150
+Legolas,Arquero,7,450,Arco élfico:Arma:180,Flechas mágicas:Munición:75

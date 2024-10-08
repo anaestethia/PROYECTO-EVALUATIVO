@@ -1,0 +1,41 @@
+# MMO RPG
+
+Este es un proyecto de MMO RPG en Python que usa un sistema de gestión de personajes.
+
+## Requisitos
+
+- Python 3.8 o superior
+- pip (gestor de paquetes de Python)
+
+## Instalación
+
+1. Clona este repositorio:
+   ```
+   git clone https://github.com/tu-usuario/mmo-rpg.git
+   cd mmo-rpg
+   ```
+
+2. Crea un entorno virtual:
+   ```
+   python -m venv venv
+   ```
+
+3. Activa el entorno virtual:
+   - En Windows:
+     ```
+     venv\Scripts\activate
+     ```
+   - En macOS y Linux:
+     ```
+     source venv/bin/activate
+     ```
+
+4. Instala las dependencias:
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Ejecución
+
+Para ejecutar el juego, simplemente ejecuta:
+python main.py
