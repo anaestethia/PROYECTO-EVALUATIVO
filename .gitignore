@@ -1,13 +1,11 @@
 # Archivos y directorios de Python
 __pycache__/
-*.py[cod]
-*$py.class
 
 # Entorno virtual
 venv/
 env/
 
-# Archivos de IDE
+# Archivos 
 .vscode/
 .idea/
 
@@ -16,5 +14,5 @@ env/
 Thumbs.db
 
 # Archivos de datos
-data/*.json
+data/*.txt
 

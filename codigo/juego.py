@@ -1,7 +1,7 @@
 import json
-from src.personaje import Personaje
-from src.inventario import Item, Inventario
-from src.menu import Menu
+from codigo.personaje import Personaje
+from codigo.inventario import Item, Inventario
+from codigo.menu import Menu
 
 class Juego:
     def __init__(self):

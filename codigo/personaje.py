@@ -1,4 +1,4 @@
-from src.inventario import Inventario
+from codigo.inventario import Inventario
 
 class Personaje:
     def __init__(self, nombre, clase, nivel=1, experiencia=0):

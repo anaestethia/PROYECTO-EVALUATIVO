@@ -1,4 +1,4 @@
-from src.inventario import Item, Inventario
+from codigo.inventario import Item, Inventario
 
 class Menu:
     def __init__(self, juego):
