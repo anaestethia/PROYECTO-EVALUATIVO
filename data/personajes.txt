@@ -1,1 +1,2 @@
 Bormir,Guerrero,1,0,Espada gigante:espada:1
+Salomon,Ladrón,2,0,daga sombria:arma:33
