@@ -17,7 +17,20 @@ class Juego:
                     nombre, clase, nivel, experiencia = datos[:4]
                     inventario = Inventario()
                     for item_data in datos[4:]:
-                        nombre_item, tipo, valor = item_data.split(':')
+                        if isinstance(item_data, str) and ':' in item_data:
+                            partes = item_data.split(':')
+                            if len(partes) == 3:
+                                nombre_item, tipo, valor = partes
+                            else:
+                                print(f"Advertencia: formato de item incorrecto: {item_data}")
+                                continue
+                        elif isinstance(item_data, dict):
+                            nombre_item = item_data.get('nombre', '')
+                            tipo = item_data.get('tipo', '')
+                            valor = item_data.get('valor', 0)
+                        else:
+                            print(f"Advertencia: formato de item no reconocido: {item_data}")
+                            continue
                         inventario.agregar_item(Item(nombre_item, tipo, int(valor)))
                     personaje = Personaje(nombre, clase, int(nivel), int(experiencia))
                     personaje.inventario = inventario
