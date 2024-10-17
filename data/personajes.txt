@@ -1,3 +1,0 @@
-Gandalf,Mago,1,0,
-Bormir,Guerrero,2,0,espada larga:arma:999
-bormir,Ladrón,1,0,

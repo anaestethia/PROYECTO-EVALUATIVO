@@ -1,4 +1,4 @@
-from codigo.inventario import Item, Inventario
+from core.inventario import Item, Inventario
 from termcolor import colored
 
 class Menu:

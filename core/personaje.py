@@ -1,4 +1,4 @@
-from codigo.inventario import Inventario
+from core.inventario import Inventario
 from termcolor import colored
 
 class Personaje:

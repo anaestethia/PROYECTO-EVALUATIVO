@@ -1,7 +1,7 @@
 import json
-from codigo.personaje import Personaje
-from codigo.inventario import Item, Inventario
-from codigo.menu import Menu
+from core.personaje import Personaje
+from core.inventario import Item, Inventario
+from core.menu import Menu
 from termcolor import colored
 
 class Juego:
