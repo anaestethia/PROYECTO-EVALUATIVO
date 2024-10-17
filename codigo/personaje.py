@@ -1,4 +1,5 @@
 from codigo.inventario import Inventario
+from termcolor import colored
 
 class Personaje:
     def __init__(self, nombre, clase, nivel=1, experiencia=0):
@@ -13,7 +14,7 @@ class Personaje:
 
     def subir_nivel(self):
         self.nivel += 1
-        print(f"{self.nombre} ha subido al nivel {self.nivel}!")
+        print(colored(f"{self.nombre} ha subido al nivel {self.nivel}!", 'green'))
 
     def ganar_experiencia(self, cantidad):
         self.experiencia += cantidad

@@ -1,3 +1,5 @@
+from termcolor import colored
+
 class Item:
     def __init__(self, nombre, tipo, valor, nivel=1):
         self.nombre = nombre
@@ -20,7 +22,7 @@ class Inventario:
 
     def listar_items(self):
         if not self.items:
-            print("El inventario está vacío.")
+            print(colored("El inventario está vacío.", 'red'))
         else:
             for item in self.items:
-                print(item)
+                print(colored(item, 'cyan'))
