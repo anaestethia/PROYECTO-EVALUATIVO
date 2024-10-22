@@ -12,36 +12,30 @@ class Juego:
 
     def cargar_personajes(self):
         try:
-            with open("data/personajes.txt", "r") as f:
-                for linea in f:
-                    self.procesar_linea(linea.strip())
+            with open("data/personajes.json", "r") as f:
+                personajes_data = json.load(f)
+                for p in personajes_data:
+                    inventario = Inventario()
+                    for item_data in p['inventario']:
+                        inventario.agregar_item(Item(item_data['nombre'], item_data['tipo'], item_data['valor']))
+                    personaje = Personaje(p['nombre'], p['clase'], p['nivel'], p['experiencia'])
+                    personaje.inventario = inventario
+                    self.personajes.append(personaje)
         except FileNotFoundError:
             print(colored("Archivo de personajes no encontrado. Se creará uno nuevo.", 'red'))
 
-    def procesar_linea(self, linea):
-        datos = linea.split(',')
-        nombre, clase, nivel, experiencia = datos[:4]
-        inventario = Inventario()
-        for item_data in datos[4:]:
-            self.procesar_item(item_data, inventario)
-        personaje = Personaje(nombre, clase, int(nivel), int(experiencia))
-        personaje.inventario = inventario
-        self.personajes.append(personaje)
-
-    def procesar_item(self, item_data, inventario):
-        if ':' in item_data:
-            partes = item_data.split(':')
-            if len(partes) == 3:
-                nombre_item, tipo, valor = partes
-                inventario.agregar_item(Item(nombre_item, tipo, int(valor)))
-            else:
-                print(f"Advertencia: formato de item incorrecto: {item_data}")
-
     def guardar_personajes(self):
-        with open("data/personajes.txt", "w") as f:
+        with open("data/personajes.json", "w") as f:
+            personajes_data = []
             for p in self.personajes:
-                items = ','.join([f"{item.nombre}:{item.tipo}:{item.valor}" for item in p.inventario.items])
-                f.write(f"{p.nombre},{p.clase},{p.nivel},{p.experiencia},{items}\n")
+                personajes_data.append({
+                    "nombre": p.nombre,
+                    "clase": p.clase,
+                    "nivel": p.nivel,
+                    "experiencia": p.experiencia,
+                    "inventario": [{"nombre": item.nombre, "tipo": item.tipo, "valor": item.valor} for item in p.inventario.items]
+                })
+            json.dump(personajes_data, f, indent=4)
 
     def crear_personaje(self, nombre, clase):
         personaje = Personaje(nombre, clase)
