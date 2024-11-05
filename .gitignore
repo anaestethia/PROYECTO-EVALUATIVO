@@ -6,5 +6,5 @@ venv/
 env/
 
 # Archivos de datos
-data/*.txt
+data/
 

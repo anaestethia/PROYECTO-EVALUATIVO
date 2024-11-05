@@ -1,4 +1,5 @@
 import json
+import os  
 from core.personaje import Personaje
 from core.inventario import Item, Inventario
 from core.menu import Menu
@@ -11,6 +12,10 @@ class Juego:
         self.menu = Menu(self)
 
     def cargar_personajes(self):
+        # Crear la carpeta data si no existe
+        if not os.path.exists("data"):
+            os.makedirs("data")
+
         try:
             with open("data/personajes.json", "r") as f:
                 personajes_data = json.load(f)
